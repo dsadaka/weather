@@ -1,0 +1,53 @@
+body {
+    color: #444;
+    font-family: "Helvetica Neue", Helvetica, Sans-Serif;
+    font-size: 16px;
+}
+
+input {
+    font-size: 1em;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    &:hover, &:focus {
+        border-color: #aaa;
+    }
+}
+
+table {
+    table-layout: fixed;
+}
+
+tr {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    width: 200px;
+    padding: 0.8em 0.25em;
+}
+
+.search {
+    padding: 30px;
+}
+
+.results {
+    margin-top: 30px;
+}
+
+#suggestions-container {
+    display: block;
+    list-style-type: none;
+    margin-top: 1px;
+    border: 1px solid #aaa;
+    padding: 0 10px;
+    width: 500px;
+
+    li {
+        cursor: pointer;
+        margin: 8px 0;
+    }
+}

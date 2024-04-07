@@ -1,0 +1,43 @@
+<h1>Weather Report</h1>
+<div class="search">
+  <%= form_with url: root_path, method: :get, id: :search_form do |f| %>
+    <%= f.text_field :search_term, id: "search_term", size: 50, autocomplete: "off", onKeyUp: "findSuggestions(this.value)", placeholder: "Address, City, Point of Interest" %>
+    <%= f.hidden_field :zip_code %>
+    <ol id="suggestions-container" style="display: none"></ol>
+  <% end %>
+
+  <% if @results %>
+    <div class="results">
+      <table>
+        <tr>
+          <td>Location</td>
+          <td><%= @results[:name] %>, <%= @results[:region] %>, <%= @results[:country] %></td>
+        </tr>
+        <tr>
+          <td>Current </td>
+          <td>
+            <%= image_tag(@results[:current_weather][:icon], alt: @results[:current_weather][:condition]) %><br/>
+            <%= @results[:current_weather][:temp_f] %><sup>&#8457;</sup> / <%= @results[:current_weather][:temp_c] %><sup>&#8451;</sup>
+          </td>
+        </tr>
+        <tr>
+          <td>Forecast</td>
+          <% @results[:forecasted_weather][:forecasts].each do |forecast| %>
+          <td>
+            <% f = forecast.deep_symbolize_keys %>
+            <% fday = f[:day] %>
+            <%= Date.parse(f[:date]).strftime('%A').strip %>
+            <%= image_tag(fday[:condition][:icon], alt: fday[:condition][:text]) %><br/>
+            <%= fday[:maxtemp_f] %><sup>&#8457;</sup> / <%= fday[:maxtemp_c] %><sup>&#8451;</sup> (High)<br/>
+            <%= fday[:mintemp_f] %><sup>&#8457;</sup> / <%= fday[:mintemp_c] %><sup>&#8451;</sup> (Low)
+          </td>
+          <% end %>
+        </tr>
+        <tr>
+          <td>Cached?</td>
+          <td><%= @results[:cached] || 'false' %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+</div>

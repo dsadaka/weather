@@ -41,19 +41,19 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Use Sass to process CSS
+gem "sassc-rails"
+
+gem 'dry-monads', '~> 1.4.0'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
-
-# Look up a map address and convert it to latitude, longitude, etc.
-gem "geocoder"
-
-# Simple flexible HTTP client library, with support for multiple backends.
-gem "faraday"
-gem "faraday_middleware"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 6.1.0'
 end
 
 group :development do
@@ -71,6 +71,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'rubocop-rails', require: false
+  gem 'simplecov', require: false
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"

@@ -36,3 +36,7 @@
 
 config/database.yml
 .idea/*
+
+# Ignore test-related files
+/coverage.data/*
+/coverage/*
