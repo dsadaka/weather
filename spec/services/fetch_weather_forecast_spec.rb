@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe FetchWeatherForecast do
   let(:zip_code) { %w[123 456].sample }
   let(:api_response) { File.read('spec/fixtures/api_response.json') }
-  let(:forecasted_weather) { { forecasts: JSON.parse(api_response)['forecast']['forecastday'] } }
   let(:forecast_data) do
     {
       name: 'Dublin',

@@ -7,7 +7,7 @@ class ForecastsController < ApplicationController
     if res.success?
       @results = res.value!
     else
-      redirect_to root_path, flash: { error: res.exception }
+      redirect_to forecast_path, flash: { error: res.exception }
     end
   end
 
