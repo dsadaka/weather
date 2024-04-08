@@ -1,10 +1,14 @@
+set :stage, :production
+set :rails_env, "production"
+set :server_name, 'apple.web-site1.com'
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
-server "ec2-54-157-171-171.compute-1.amazonaws.com", user: "ubuntu", roles: %w{app web production}, primary: true
+server "#{fetch(:server_name)}", user: "ubuntu", roles: %w{app web production}, primary: true
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 
@@ -59,4 +63,3 @@ server "ec2-54-157-171-171.compute-1.amazonaws.com", user: "ubuntu", roles: %w{a
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-set :rails_env, "production"

@@ -1,6 +1,6 @@
 # Weather
 
-Given an address, show local forecast and High/Low temperatures for the day and the next two.
+Given an address, show local forecast and High/Low temperatures for the current day and the next two.
 
 This is a Rails 7 app that allows a user to look up the current and forecasted weather
 for a location. A location can be a specific address, a point of interest, or a zip
@@ -16,6 +16,10 @@ details.
 -   Address suggestions are provided by [Mapbox API](https://docs.mapbox.com/api/search/search-box/. 
 -   Weather details are provided by [Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)
 -   If an address is selected from the address suggestions dropdown or a zip code is entered directly, weather data is cached by zip code for 30 minutes.
+
+## To Run This App
+
+http://apple.web-site1.com
 
 ## Dependencies
 
