@@ -59,3 +59,4 @@ server "ec2-54-157-171-171.compute-1.amazonaws.com", user: "ubuntu", roles: %w{a
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+set :rails_env, "production"

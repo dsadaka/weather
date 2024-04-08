@@ -27,7 +27,7 @@ set :rvm_type, :system
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/master.key', '.env'
+append :linked_files, 'config/master.key', '.env', "config/database.yml"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
@@ -54,6 +54,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to true if using ActiveRecord
 set :puma_workers,  2
 set :puma_threads, [5, 16]
+set :puma_enable_socket_service, true
 
 set :nginx_config_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :nginx_server_name, -> {"localhost #{fetch(:server_name)}"}
