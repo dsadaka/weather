@@ -1,6 +1,6 @@
 # Weather
 
-Given an address, show local forecast and High/Low temperatures for the day
+Given an address, show local forecast and High/Low temperatures for the day and the next two.
 
 This is a Rails 7 app that allows a user to look up the current and forecasted weather
 for a location. A location can be a specific address, a point of interest, or a zip

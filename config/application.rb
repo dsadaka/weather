@@ -7,7 +7,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 
 # Load dotenv only in development or test environment
-if ['development', 'test'].include? ENV['RAILS_ENV']
+if ['development', 'test', 'production'].include? ENV['RAILS_ENV']
   Dotenv::Rails.load
 end
 
