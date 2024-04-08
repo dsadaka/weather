@@ -11,7 +11,10 @@ class ForecastsController < ApplicationController
     end
   end
 
-  # GET /search/autocomplete?search_term=<ADDRESS>
+  # GET /forecast/autocomplete?search_term=<ADDRESS>
+  # This action is called via JS code when the user begins typing a search term
+  # Passed: search term entered by user
+  # Returns:  JSON to populate the suggested addresses dropdown
   def autocomplete
     res = FetchSuggestedAddresses.call(search_term)
     data = res.success? ? res.value! : {}
