@@ -2,10 +2,10 @@ require_relative "boot"
 
 # require "rails/all"
 require "rails"
-require "active_model/railtie"
+# require "active_model/railtie"
 # And now the rest
 require "action_controller/railtie"
-require "action_mailer/railtie"
+# require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie" # Deprecated for Rails >= 7, so add it only if you're using it
 # require "rails/test_unit/railtie"
