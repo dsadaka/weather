@@ -2,11 +2,11 @@
 
 Given an address, show local forecast and High/Low temperatures for the current day and the next two.
 
-This is a Rails 7 app that allows a user to look up the current and forecasted weather
+Written in Ruby on Rails 7.1, this app allows you to look up the current and forecasted weather
 for a location. A location can be a specific address, a point of interest, or a zip
 code. Upon typing the address, the app will look up address suggestions from Mapbox API
-and display them below the search field. The user can select an address to get weather
-details.
+and display them in a dropdown below the search field. Click on any suggestion to get weather
+details at that location.
 
 ![Screenshot](https://website1-screenshots.s3.amazonaws.com/WeatherScreenshot.png)
 
@@ -17,7 +17,7 @@ details.
 -   Weather details are provided by [Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)
 -   If an address is selected from the address suggestions dropdown or a zip code is entered directly, weather data is cached by zip code for 30 minutes.
 
-## To Run This App
+## Give it a try at...
 
 http://apple.web-site1.com
 
@@ -42,7 +42,7 @@ Create a `.env` file and set these variables with your credentials. Refer to `.e
 
 ### Caching
 
-If the caching of weather data does not appear to be working, you may need to run `rails dev:cache`. Also, recall that if a zip code was not included in the search string, the request will not be cached
+If the caching of weather data does not appear to be working, you may need to run `rails dev:cache` if you're in the development environment. Also, recall that if a zip code was not included in the search string, the request will not be cached
 
 ## Tests
 
